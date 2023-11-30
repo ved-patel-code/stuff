@@ -1,0 +1,71 @@
+#this is a quiz 
+#there are 8 ques to win 10lakh 
+#1st que of 1lakh  2nd que of 1lakh 3rd que of 1lakh 4th que of 1lakh 5th que of 1lakh 6th que of 1lakh
+#7th que of 1lakh  and  8th final question will be of 3 lakhs 
+print('ruless!!')
+print('''this is a quiz 
+there are 8 ques to win 10lakh 
+1st que of 1lakh 
+2nd que of 1lakh
+3rd que of 1lakh
+4th que of 1lakh 
+5th que of 1lakh 
+6th que of 1lakh
+7th que of 1lakh 
+8th final question will be of 3 lakhs ''')
+
+
+
+
+import random
+
+
+
+que = ['1)The term “white coal” sometimes referred to which of the following?', '2)The Stomata in the aquatic plants is ________?', '3)Fructose is a form of carbohydrate synthesized in plants. It becomes table sugar by combining which of the following?', '4)The Chlorophyll cells within the plant leaves are perfectly optimized to absorb which of the following waves of the Sun Light?', '5)The Gram Positive Bacteria can be identified by the Gram staining because of the following reasons?', '6)Which among the following is not among Micronutrients required for plants?', '7)Plants which are adapted to grow in soils containing a high concentration of salt are known as:', '8)Which of the following are the cases of use of concave mirrors?']
+key = ['C', 'C', 'A', 'B', 'B', 'B', 'C', 'C']
+opt = ['[A]Geothermal Electricity [B]Wind Energy [C]Hydroelectricity [D]Biomass Energy', '[A] Not Found [B] Found & available on both the surfaces [C] Found & available on the upper surface only [D] Found and available only on the lower surface', '[A] Glucose [B] Galactose [C] Maltose [D] None of the above', '[A] Green [B] Red & Blue [C] Red & Yellow [D] Yellow and Blue', '[A] The cell walls have more lipids compared to peptidoglycan [B] The Cells walls have more Peptidoglycan compared to Lipids [C] The Cells membrane has more fatty acids [D] The plasma has Peptidoglycans', '[A] Molybdenum [B] Magnesium [C] Manganese [D] Zinc', '[A] Xerophytes [B] Mesophytes [C] Halophytes [D] Thallophytes', '[A] Search-lights [B] Shaving mirrors [C] Solar furnaces [D] All of the above']
+a = 0
+b = random.randint(0, len(que) - 1)
+
+print()
+
+print('You can stop playing after winning 4 rounds if you dont want to play')
+
+print()
+
+while True:
+    if a == 4:
+        co = input('Continue? Y or N\n')
+        while co not in 'Yy' and co not in 'nN':
+            print(co)
+            print('Invalid input')
+            co = input('Continue? Y or N')
+        if co == 'n'or co == 'N':
+            print('Won 4 lakhs')
+            break
+
+    print(que[b], opt[b], sep='\n')
+    user = input('ans:').upper()
+    while user not in ['A', 'B', 'C', 'D']:
+        user = input('ans:').upper()
+        print('Wrong')
+        print()
+
+    if user == key[b]:
+        print('Win')
+        que.pop(b)
+        key.pop(b)
+        opt.pop(b)
+        a += 1
+        if a < 8:
+            print('Won', a, 'lakh')
+            print('\n')
+    else:
+        print('Lost')
+        a = 0
+        break
+
+    if a == 8:
+        print('10 lakhs')
+        break
+    b = random.randint(0,len(que)-1)
