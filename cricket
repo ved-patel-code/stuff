@@ -1,0 +1,56 @@
+import random
+
+toss=int(input('0 or 1'))
+cotos=random.randint(0,1)
+if toss == cotos:
+    ask=int(input('toss won for bat = 0 for ball = 1'))
+elif toss!=cotos:
+    
+    to=random.randint(0,1)
+    ask=to
+    print(to)
+
+
+
+
+
+if ask==0:
+    
+    a=int(input('0 to 6'))
+    while a<0 or a>6:
+        print('0 to 6 only')
+        a=int(input('0 to 6'))
+    runs=0
+    com=random.randint(0,6)
+    while True:
+        print(com)
+        if a == com:
+            print(runs)
+            print('out')
+            break
+        runs+=a
+        a=int(input('0 to 6'))
+        while a<0 or a>6:
+            print('0 to 6 only')
+            a=int(input('0 to 6'))
+        com=random.randint(0,6)
+            
+if ask==1:
+    a=int(input('0 to 6'))
+    while a<0 or a>6:
+        print('0 to 6 only')
+        a=int(input('0 to 6'))
+    runs=0
+    com=random.randint(0,6)
+    while True:
+        print(com)
+        if a == com:
+            print(runs)
+            print('out')
+            break
+        runs+=com
+        a=int(input('0 to 6'))
+        while a<0 or a>6:
+            print('0 to 6 only')
+            a=int(input('0 to 6'))
+        com=random.randint(0,6)
